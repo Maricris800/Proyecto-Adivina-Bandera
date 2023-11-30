@@ -9,7 +9,7 @@ body{
   text-align: center;
   margin: auto;
   width: 90%;
-  height: 130vh;
+  height: 100vh;
   background-image: linear-gradient(
     40deg,
   hsl(240deg 100% 20%) 0%,
@@ -33,6 +33,9 @@ h1{
   font-weight: bolder;
   margin: 20px;
   padding: 20px;
+  background-color: white;
+  border-radius: 25px;
+  display: inline-flex;  
 }
 
 h2{
@@ -57,7 +60,9 @@ header button{
 .contenedor-imagenes{
   margin-top: 15px;
   margin-bottom: 15px;
+  visibility: hidden;  
 }
+
 
 span .opciones-respuesta{  
   padding: 10px;
@@ -69,7 +74,8 @@ span .opciones-respuesta{
 
 ul{
  list-style: none;
- display: flex;
+ /*display: flex;*/
+ display: none;
  flex-direction: column;
  justify-content: center;
  align-items: center;
