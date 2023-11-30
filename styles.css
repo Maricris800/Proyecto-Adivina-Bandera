@@ -1,0 +1,108 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  width: 90%;
+  height: 100vh;
+  background-image: linear-gradient(
+    40deg,
+  hsl(240deg 100% 20%) 0%,
+  hsl(281deg 100% 21%) 14%,
+  hsl(304deg 100% 23%) 26%,
+  hsl(319deg 100% 30%) 36%,
+  hsl(329deg 100% 36%) 45%,
+  hsl(336deg 100% 41%) 54%,
+  hsl(346deg 83% 51%) 62%,
+  hsl(3deg 95% 61%) 69%,
+  hsl(17deg 100% 59%) 76%,
+  hsl(30deg 100% 55%) 83%,
+  hsl(40deg 100% 50%) 89%,
+  hsl(48deg 100% 50%) 95%,
+  hsl(55deg 100% 50%) 100%
+  );
+}
+
+h1{
+  font-size: 36px;
+  font-weight: bolder;
+  margin: 20px;
+  padding: 20px;
+}
+
+h2{
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px;
+  padding: 20px;
+}
+
+header button{
+  margin: 10px;
+  padding: 10px;
+  font-size: medium;
+  border: 2px dashed black;
+  border-radius: 20px;
+  background-color: blue;  
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contenedor-imagenes{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+span .opciones-respuesta{  
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+ul{
+ list-style: none;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ margin-left: -24px; 
+}
+
+li{
+  width: 420px;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;  
+  position: relative;
+  
+}
+
+.boton-opcion{
+  border: none;
+  font-size: 25px;  
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.letras-opcion{
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;  
+}
+
