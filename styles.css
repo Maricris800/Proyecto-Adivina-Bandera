@@ -57,6 +57,13 @@ header button{
   cursor: pointer;
 }
 
+.Aciertos{
+  margin: 5px;
+  padding: 5px;
+  font-size: larger;
+  font-weight: bold;
+}
+
 .contenedor-imagenes{
   margin-top: 15px;
   margin-bottom: 15px;
