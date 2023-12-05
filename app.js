@@ -4,8 +4,6 @@ let bandera = document.querySelector("img");
 let listaOpciones = document.querySelector("ul");
 let respuestaCorrecta = "Argentina";
 let contador = 0;
- 
-
 
 //recuperando los botones opciones de respuesta//
 let botonOpcion = document.querySelectorAll(".boton-opcion");
@@ -14,47 +12,55 @@ let boton2 = document.querySelector("#opcion2");
 let boton3 = document.querySelector("#opcion3");
 
 //Función para ocultar el h2 y el botón, y hacer aparecer la bandera y las opciones
-iniciar.addEventListener("click", () =>{
-    cambiarEstilo();
-    
-    evaluar();
-    
-    
+iniciar.addEventListener("click", () => {
+  cambiarEstilo();
+
+  evaluar();
 });
 
-function cambiarEstilo(){
-    iniciar.style = "display:none";
-    preguntaJuego.style = "display:none";
-    bandera.style = "visibility:visible";
-    listaOpciones.style = "display:flex";    
+function cambiarEstilo() {
+  iniciar.style = "display:none";
+  preguntaJuego.style = "display:none";
+  bandera.style = "visibility:visible";
+  listaOpciones.style = "display:flex";
 }
 
-function evaluar(){  
-        
-   
-    for (let i=0; i < botonOpcion.length; i++){
-         
-       botonOpcion[i].addEventListener("click", () =>{
-            console.log(botonOpcion[i].innerText);
-            if (botonOpcion[i].innerText === respuestaCorrecta){
-                contador++;                  
-            } 
-            setTimeout(cambiarImagen,2000);
-       }); 
-              
-    }   
+function evaluar() {
+  for (let i = 0; i < botonOpcion.length; i++) {
+    botonOpcion[i].addEventListener("click", () => {
+      console.log(botonOpcion[i].innerText);
+      if (botonOpcion[i].innerText === respuestaCorrecta) {
+        contador++;
+      }
+      setTimeout(cambiarImagen, 1000);
+    });
+  }
 }
 
+const randomMinMax = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
 
-function cambiarImagen(){
+function cambiarImagen() {
+  if (banderas.length === 0) {
+    console.log("Finalizado");
+    document.querySelector(
+      ".Aciertos"
+    ).innerHTML = `<p>Correctas: ${contador}</p>
+    <p>Incorrectas: ${banderasOriginal.length + 1 - contador}</p>
+    `;
+    return;
+  }
 
-    let imagenAleatoria = Math.floor(Math.random()*11);
+  let imagenAleatoria = randomMinMax(0, banderas.length - 1);
 
-    bandera.src = banderas[imagenAleatoria].bandera;
-    boton1.textContent = banderas[imagenAleatoria].opciones[0]; 
-    boton2.textContent = banderas[imagenAleatoria].opciones[1];
-    boton3.textContent = banderas[imagenAleatoria].opciones[2];
+  const [banderaEliminada] = banderas.splice(imagenAleatoria, 1);
 
-    respuestaCorrecta = banderas[imagenAleatoria].opcionCorrecta;
-    console.log(respuestaCorrecta);
+  bandera.src = banderaEliminada.bandera;
+  boton1.textContent = banderaEliminada.opciones[0];
+  boton2.textContent = banderaEliminada.opciones[1];
+  boton3.textContent = banderaEliminada.opciones[2];
+
+  respuestaCorrecta = banderaEliminada.opcionCorrecta;
+  console.log(respuestaCorrecta);
 }
