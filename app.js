@@ -3,6 +3,7 @@ let preguntaJuego = document.querySelector("h2");
 let bandera = document.querySelector("img");
 let listaOpciones = document.querySelector("ul");
 let respuestaCorrecta = "Argentina";
+let reiniciar = document.querySelector(".reiniciar");
 let contador = 0;
 
 //recuperando los botones opciones de respuesta//
@@ -49,6 +50,19 @@ function cambiarImagen() {
     ).innerHTML = `<p>Correctas: ${contador}</p>
     <p>Incorrectas: ${banderasOriginal.length + 1 - contador}</p>
     `;
+
+    bandera.style = "visibility:hidden";
+    listaOpciones.style = "display:none";
+
+    reiniciar.style = "display:block";
+    /*reiniciar.style = "text-align:center";*/
+
+    reiniciar.addEventListener("click", () => { 
+        
+        location.reload();    
+
+    });
+
     return;
   }
 
